@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mitra Hejazipour – Liens</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <main class="card">
+      <!-- Cover + avatar -->
+      <header class="card-header">
+        <img src="img\cover.JPG" alt="Échiquier" class="cover" />
+          <i class="fa-solid fa-shares-nodes"></i>
+        </button>
+        <div class="avatar-wrapper">
+          <img src="img\avatar.jpg" alt="Photo du joueur d'échecs" class="avatar" />
+        </div>
+      </header>
+
+      <!-- Profil -->
+      <section class="profile">
+        <h1>Mitra Hejazipour</h1>
+        <p class="tagline">Grand maître feminin d’échecs • Coach • Créateur de contenu</p>
+
+        <div class="socials">
+          <a href="https://instagram.com/mitra_chess" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://instagram.com/Mitrahejazipour" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://tiktok.com/Mitrachess" target="_blank" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://facebook.com/mitrahejazipour" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://x.com/MitraHejazipour" target="_blank" aria-label="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mitra-hejazipour" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Liens principaux -->
+      <section class="links">
+        <!-- MitraChess.com -->
+        <a class="link-card" href="https://mitrachess.com" target="_blank">
+            <div class="link-icon">
+            <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="link-text">
+            <div class="link-title">👉 MitraChess.com</div>
+            <div class="link-subtitle">Plus de 200 élèves formés à travers mes cours et programmes.</div>
+            </div>
+        </a>
+
+        <!-- Candidature cours individuels – Français -->
+        <a class="link-card" href="https://tonlien-formulaire-fr" target="_blank">
+            <div class="link-icon">
+            <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div class="link-text">
+            <div class="link-title">👉 Candidature cours individuels (FR)</div>
+            <div class="link-subtitle">Formulaire pour rejoindre mes séances privées en français.</div>
+            </div>
+        </a>
+
+        <!-- Candidature cours individuels – English -->
+        <a class="link-card" href="https://tonlien-formulaire-en" target="_blank">
+            <div class="link-icon">
+            <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div class="link-text">
+            <div class="link-title">👉 Private lessons application (EN)</div>
+            <div class="link-subtitle">Apply here for individual coaching in English.</div>
+            </div>
+        </a>
+
+        <!-- LinkedIn Chevaleresses -->
+        <a class="link-card" href="https://www.linkedin.com/company/chevaleresses" target="_blank">
+            <div class="link-icon">
+            <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <div class="link-text">
+            <div class="link-title">👉 Les Chevaleresses de l’Échiquier (LinkedIn)</div>
+            <div class="link-subtitle">Suivez l’association et nos actions pour les femmes dans les échecs.</div>
+            </div>
+        </a>
+
+      </section>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Mitra Hejazipour – Tous droits réservés.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

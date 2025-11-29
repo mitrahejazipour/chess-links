@@ -1,0 +1,258 @@
+:root {
+  --bg-gradient-start: #020617;
+  --bg-gradient-end: #111827;
+  --card-bg: #020617;
+  --card-border: rgba(148, 163, 184, 0.35);
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --accent: #fbbf24;
+  --link-bg: rgba(15, 23, 42, 0.95);
+  --link-border: rgba(148, 163, 184, 0.4);
+  --shadow-strong: 0 24px 60px rgba(15, 23, 42, 0.85);
+  --radius-card: 32px;
+  --radius-pill: 999px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top left, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-main);
+}
+
+body {
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: radial-gradient(circle at top left, rgba(15,23,42,0.9), var(--card-bg));
+  border-radius: var(--radius-card);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-strong);
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+/* Header */
+
+.card-header {
+  position: relative;
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.share-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-main);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.share-btn i {
+  font-size: 16px;
+}
+
+.share-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Avatar */
+
+.avatar-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: -56px;
+  transform: translateX(-50%);
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  padding: 4px;
+  background: linear-gradient(135deg, #f97316, #a855f7, #22c55e);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.8);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  border: 3px solid #020617;
+  object-fit: cover;
+}
+
+/* Profile */
+
+.profile {
+  padding: 72px 24px 12px;
+  text-align: center;
+}
+
+.profile h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Social icons */
+
+.socials {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.socials a {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 15px;
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, border-color 0.12s;
+}
+
+.socials a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
+  border-color: rgba(248, 250, 252, 0.7);
+}
+
+/* Links */
+
+.links {
+  padding: 8px 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--link-bg);
+  border: 1px solid var(--link-border);
+  text-decoration: none;
+  color: var(--text-main);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.7);
+  transition: transform 0.14s ease-out, box-shadow 0.14s ease-out, border-color 0.14s;
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+  border-color: rgba(248, 250, 252, 0.7);
+}
+
+.link-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 0% 0%, #f97316, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.link-icon i {
+  font-size: 18px;
+}
+
+.link-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.link-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Footer */
+
+.footer {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 480px) {
+  .card {
+    border-radius: 24px;
+  }
+
+  .cover {
+    height: 190px;
+  }
+
+  .avatar-wrapper {
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+  }
+
+  .profile {
+    padding-top: 64px;
+  }
+
+  .links {
+    padding-inline: 14px;
+  }
+}
