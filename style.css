@@ -1,15 +1,14 @@
 :root {
-  --bg-gradient-start: #020617;
-  --bg-gradient-end: #111827;
-  --card-bg: #020617;
-  --card-border: rgba(148, 163, 184, 0.35);
-  --text-main: #f9fafb;
-  --text-muted: #9ca3af;
-  --accent: #fbbf24;
-  --link-bg: rgba(15, 23, 42, 0.95);
-  --link-border: rgba(148, 163, 184, 0.4);
-  --shadow-strong: 0 24px 60px rgba(15, 23, 42, 0.85);
-  --radius-card: 32px;
+  --bg-page: #eff2f7;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --accent: #111827;
+  --link-bg: #f2f2f2;
+  --link-border: #e5e7eb;
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+  --radius-card: 24px;
   --radius-pill: 999px;
 }
 
@@ -24,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(circle at top left, var(--bg-gradient-start), var(--bg-gradient-end));
+  background: var(--bg-page);
   color: var(--text-main);
 }
 
@@ -43,11 +42,11 @@ body {
 .card {
   width: 100%;
   max-width: 480px;
-  background: radial-gradient(circle at top left, rgba(15,23,42,0.9), var(--card-bg));
+  background: var(--card-bg);
   border-radius: var(--radius-card);
   border: 1px solid var(--card-border);
-  box-shadow: var(--shadow-strong);
-  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  overflow: visible; /* pour laisser respirer l’avatar */
   padding-bottom: 20px;
 }
 
@@ -60,30 +59,33 @@ body {
 .cover {
   display: block;
   width: 100%;
-  height: 210px;
+
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;         /* bords arrondis de la cover */
   object-fit: cover;
 }
 
+/* Bouton share (optionnel, très léger) */
+
 .share-btn {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 38px;
-  height: 38px;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
   border-radius: 999px;
-  border: none;
-  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: var(--text-main);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
 }
 
 .share-btn i {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .share-btn:hover {
@@ -95,40 +97,42 @@ body {
 .avatar-wrapper {
   position: absolute;
   left: 50%;
-  bottom: -56px;
+  bottom: -46px;
   transform: translateX(-50%);
-  width: 112px;
-  height: 112px;
+  width: 92px;
+  height: 92px;
   border-radius: 999px;
-  padding: 4px;
-  background: linear-gradient(135deg, #f97316, #a855f7, #22c55e);
-  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.8);
+  padding: 3px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
 }
 
 .avatar {
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  border: 3px solid #020617;
+  border: 1px solid #e5e7eb;
   object-fit: cover;
+  object-position: center -25px;
+
 }
 
 /* Profile */
 
 .profile {
-  padding: 72px 24px 12px;
+  padding: 64px 24px 12px;
   text-align: center;
 }
 
 .profile h1 {
   margin: 0 0 4px;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
 }
 
 .tagline {
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-muted);
 }
 
@@ -138,28 +142,28 @@ body {
   margin-top: 16px;
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .socials a {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
   color: var(--text-main);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, border-color 0.12s;
 }
 
 .socials a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
-  border-color: rgba(248, 250, 252, 0.7);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+  border-color: #111827;
 }
 
 /* Links */
@@ -168,42 +172,48 @@ body {
   padding: 8px 18px 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 
 .link-card {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 12px 18px;
+  gap: 12px;
+  padding: 10px 16px;
   border-radius: var(--radius-pill);
   background: var(--link-bg);
   border: 1px solid var(--link-border);
   text-decoration: none;
   color: var(--text-main);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.7);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.04);
   transition: transform 0.14s ease-out, box-shadow 0.14s ease-out, border-color 0.14s;
 }
 
 .link-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
-  border-color: rgba(248, 250, 252, 0.7);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  border-color: #111827;
 }
 
+/* Icône = image Noun Project */
+
 .link-icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 999px;
-  background: radial-gradient(circle at 0% 0%, #f97316, #a855f7);
+  background: #f2f2f2;
+  border: 1px solid #f2f2f2;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.link-icon i {
-  font-size: 18px;
+.link-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
 }
 
 .link-text {
@@ -228,24 +238,24 @@ body {
   margin-top: 18px;
   text-align: center;
   font-size: 11px;
-  color: #6b7280;
+  color: #9ca3af;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 
 @media (max-width: 480px) {
   .card {
-    border-radius: 24px;
+    border-radius: 20px;
   }
 
-  .cover {
-    height: 190px;
+  .card-header {
+    padding-inline: 14px;
   }
 
   .avatar-wrapper {
-    width: 100px;
-    height: 100px;
-    bottom: -50px;
+    width: 84px;
+    height: 84px;
+    bottom: -42px;
   }
 
   .profile {
